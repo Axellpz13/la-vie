@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+section p,section h1, section h2 {
+  scroll-snap-align: center;
+}
+
+.background {
+    position: sticky;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-size: cover;
+    top: 0;
+    width: 60%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.header h1{
+    position: relative;
+    z-index: 1;
+    font-size: 5rem;
+    display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: flex-end;
+  text-align: right;
+    margin-right: 30vh;
+    opacity: 0;
+    animation: fadeInDown 3s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 3rem;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: flex-end;
+  text-align: right;
+    margin-right: 30vh;
+    padding-top: 50vh;
+    padding-bottom: 50vh;
+}
+
+
+
+section {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.birth {
+  background: black;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  text-align: center;
+  padding: 50px;
+}
+
+.circle {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 30vh  ;
+  margin-top: 60vh;
+  margin-bottom: 50vh;
+  background: white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  animation: pulse 3s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0% { transform: translateY(-50%) scale(1); opacity: 0.9; }
+  50% { transform: translateY(-50%) scale(1.8); opacity: 1; }
+  100% { transform: translateY(-50%) scale(1); opacity: 0.9; }
+}
+
+/* Texte défilant */
+.text {
+  flex: 1;
+  padding-left: 50px;
+}
+
+.text p {
+    font-size: 1.5rem;
+    margin: 50vh 0; /* chaque phrase occupe 1 écran entier */
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Classe active quand visible */
+.text p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.enfance {
+  color: #000000;
+  background: linear-gradient(to bottom, #fcfcfc, #ffffff);
+}
+
+.background-enfance {
+    position: sticky;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-size: cover;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    z-index: 1;
+}
+
+/* Texte (mêmes animations que naissance) */
+.enfance .text-enfance {
+  flex: 1;
+  padding-left: 50px;
+  padding-bottom: 40vh;
+  padding-top: 50vh;
+}
+
+.enfance .text-enfance p{
+  font-size: 2.5rem;
+  padding: 5vh;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+  text-align: right;
+}
+
+.enfance .text-enfance p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.adolescence {
+  color: #ffffff;
+  background-color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+
+}
+
+.background-adolescence {
+    position: sticky;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.adolescence .text-ado {
+  flex: 1;
+  padding-left: 50px;
+  padding-top: 40vh;
+  padding-bottom: 40vh;
+}
+
+.adolescence .text-ado p {
+  font-size: 2.5rem;
+  padding: 15vh;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
+  text-shadow: 0px 5px 15px rgb(209, 209, 209);
+  font-weight: 600;
+  opacity: 0; 
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.adolescence .text-ado p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.adulte{
+  color: #ffffff;
+  background-color: #000000 ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+.background-adulte {
+    position: sticky;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    z-index: 1;
+}
+.adulte .text-adulte {
+  flex: 1;
+  padding-left: 50px;
+  padding-top: 40vh;
+  padding-bottom: 40vh;
+}
+.adulte .text-adulte p {
+  font-size: 2.5rem;
+  padding: 15vh;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
+  text-shadow: 0px 5px 15px rgb(209, 209, 209);
+  font-weight: 600;
+  opacity: 0; 
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+.adulte .text-adulte p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.viellesse {
+  color: #ffffff;
+  background-color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+.background-viellesse {
+    position: sticky;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    z-index: 1;
+}
+.viellesse .text-viellesse {
+  flex: 1;
+  padding-left: 50px;
+  padding-bottom: 40vh;
+  padding-top: 50vh;
+}
+.viellesse .text-viellesse p {
+  font-size: 2.5rem;
+  padding: 15vh;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
+  text-shadow: 0px 5px 15px rgb(209, 209, 209);
+  font-weight: 600;
+  opacity: 0; 
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+.viellesse .text-viellesse p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mort {
+  color: #ffffff;
+  background-image: url(background/étoile.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+.mort .text-mort {
+  flex: 1;
+  padding-left: 50px;
+  padding: 50vh;
+  padding-top: 50vh;
+  padding-bottom: 50vh;
+}
+.mort .text-mort p {
+  font-size: 2.5rem;
+  padding: 5vh;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
+  text-shadow: 0px 5px 15px rgb(209, 209, 209);
+  font-weight: 600;
+  opacity: 0; 
+  transform: translateY(30px);
+  transition: all 1.8s ease-out;
+}
+.mort .text-mort p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header h1 {
+    font-size: 4rem;
+    
+  }
+        }
